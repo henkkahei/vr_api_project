@@ -40,4 +40,4 @@ dbt docs generate
 
 dbt docs serve
 
-echo \*\*\* Move to visualization notebook \(2_bi_tool.ipynb\)
+echo \*\*\* Move to visualization notebook \(bi_tool.ipynb\)
