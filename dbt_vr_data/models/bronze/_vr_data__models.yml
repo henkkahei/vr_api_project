@@ -1,0 +1,64 @@
+version: 2
+
+sources:
+  - name: vr_data_raw
+    schema: medallion_bronze
+    description: Table consists of VR trains data
+    tables:
+      - name: vr_data_
+        description: Source table made with Polars.
+        columns:
+        - name: route_sk
+          type: STRING
+          description: Primary key (surrogate)
+          tests:
+            - unique
+            - not_null
+        - name: trainNumber
+          type: INT
+          description: Train id
+          tests:
+            - not_null
+        - name: departureDate
+          type: DATE
+          description: Departure schedule (date + time)
+        - name: operatorUICCode
+          type: INT
+          description: Operator id
+          tests:
+            - not_null
+        - name: operatorShortCode
+          type: STRING
+          description: Operator 'name'
+          tests:
+            - not_null
+        - name: trainType
+          type: STRING
+          description: Train type, e.g. 'IC'
+        - name: trainCategory
+          type: STRING
+          description: Train category, e.g. 'Long-distance'
+        - name: commuterLineID
+          type: STRING
+          description: Line ID, e.g. 'Z'
+        - name: runningCurrently
+          type: BOOLEAN
+          description: Whether train is on the move
+        - name: cancelled
+          type: BOOLEAN
+          description: Whether train is cancelled
+        - name: version
+          type: BIGINT
+          description: Train version
+        - name: timetableType
+          type: STRING
+          description: Train type - ADHOC (one-time) or REGULAR (e.g. every monday)
+          tests:
+            - accepted_values:
+                values: ['ADHOC', 'REGULAR']
+        - name: timetableAcceptanceDate
+          type: DATE
+          description: When was train accepted to run on Finnish railway tracks
+        - name: timeTableRows
+          type: JSON[]
+          description: Contains data like train schedules and lateness info

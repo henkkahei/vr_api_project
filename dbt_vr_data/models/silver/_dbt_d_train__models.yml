@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: d_train
+    description: "Table contains info about a train and passed stations"
+    columns:
+      - name: train_id
+        description: Train id
+        tests:
+          - not_null
+      - name: train_category
+        description: Train category (e.g. 'Long-distance', 'cargo')
+        tests:
+          - not_null
+      - name: operator_id
+        description: Operator id (e.g. 10)
+        tests:
+          - not_null
+      - name: operator_code
+        description: Operator 'name' (e.g. 'vr')
+        tests:
+          - not_null
+      - name: timetable_type
+        description: Train type - ADHOC or REGULAR
+        tests:
+          - accepted_values:
+              values: ['ADHOC', 'REGULAR']
+      - name: stop_ids
+        description: Passed stations' id's in a list
+        tests:
+          - not_null
+      - name: stop_names
+        description: Passed stations' names (abbreviated) in a list
+        tests:
+          - not_null
+      - name: stop_names_string
+        description: Passed stations' names (abbreviated) as a string, delimiter = -
+        tests:
+          - not_null

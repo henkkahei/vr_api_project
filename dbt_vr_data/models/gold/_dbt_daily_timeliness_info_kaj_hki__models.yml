@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: daily_timeliness_info_kaj_hki
+    description: >
+      Table contains data of daily departure and arrival schedules' lateness/earliness info
+      between the cities Kajaani - Helsinki.
+      Table consists of data where the train leaves from Kajaani (KAJ) and ends at Helsinki (Pasila station (PSL)).
+    
+    columns:
+      - name: train_id
+        description: Train id
+        tests:
+          - not_null
+      - name: day
+        description: Day when the train was moving
+        tests:
+          - not_null
+      - name: KAJ_departure_timeliness
+        description: >
+          Info of how late/early (in minutes) the train has
+          departured from Kajaani railway station.
+        tests:
+          - not_null
+      - name: HKI_arrival_timeliness
+        description: >
+          Info of how late/early (in minutes) the train has
+          arrived to Helsinki (Pasila station).
+        tests:
+          - not_null

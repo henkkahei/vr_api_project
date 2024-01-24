@@ -1,0 +1,7 @@
+duckdb==0.9.*
+dbt-duckdb==1.7.*
+ipykernel
+polars==0.19.*
+pyarrow==14.0.*
+matplotlib==3.8.*
+seaborn==0.13.*

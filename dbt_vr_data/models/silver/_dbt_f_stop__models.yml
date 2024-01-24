@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: f_stop
+    description: "Table contains info about stations and train stops per station"
+    columns:
+      - name: stop_sk
+        description: Primary key (surrogate)
+        tests:
+          - unique
+          - not_null
+      - name: train_id
+        description: Train id
+        tests:
+          - not_null
+      - name: station_id
+        description: Station id
+        tests:
+          - not_null
+      - name: station_name
+        description: Station name (abbrev.)
+        tests:
+          - not_null
+      - name: arrival_lateness
+        description: Timeliness of arrival to station in minutes
+      - name: departure_lateness
+        description: Timeliness of departure from station in minutes
+      - name: arrival_schedule
+        description: Estimated schedule of arrival to a station (datetime)
+      - name: departure_schedule
+        description: Estimated schedule of departure from a station (datetime)
+      - name: arrival_actual
+        description: Actual schedule of arrival to a station (datetime)
+      - name: departure_actual
+        description: Actual schedule of departure from a station (datetime)
+      - name: lateness_causes
+        description: Causes for a train of being late at a station

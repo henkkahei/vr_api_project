@@ -1,0 +1,7 @@
+dbt_vr_data:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: '../data/warehouse/vr_data.duckdb'
+      schema: medallion
