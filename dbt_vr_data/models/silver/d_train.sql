@@ -8,7 +8,7 @@ WITH exploded AS (
     runningCurrently,
     timetableType,
     unnest(timeTableRows) as timetable_row
-FROM {{ source('vr_data_raw', 'vr_data_') }}
+FROM {{ source('vr_data_raw', 'vr_data_raw') }}
 ),
 
 defined AS (

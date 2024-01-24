@@ -5,7 +5,7 @@ sources:
     schema: medallion_bronze
     description: Table consists of VR trains data
     tables:
-      - name: vr_data_
+      - name: vr_data_raw
         description: Source table made with Polars.
         columns:
         - name: route_sk

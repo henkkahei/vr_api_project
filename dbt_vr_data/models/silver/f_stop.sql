@@ -3,7 +3,7 @@ WITH exploded AS (
         route_sk,
         trainNumber,
         UNNEST(timeTableRows) as timetable_row
-    FROM {{ source('vr_data_raw', 'vr_data_') }}
+    FROM {{ source('vr_data_raw', 'vr_data_raw') }}
 ),
 
 defined AS (
