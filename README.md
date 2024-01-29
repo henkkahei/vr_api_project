@@ -4,6 +4,7 @@ This repository contains a framework of a datalake implementation with DuckDB an
 
 - Install a python virtual environment in the project's root folder. In terminal run `python -m venv --copies .venv`. Python version 3.11 was used in this project.
 - In terminal run
+    - `source .venv/Scripts/activate`
     - `pip install -r requirements.txt`
     - `chmod u+x runme.sh`
     - `sh runme.sh`
